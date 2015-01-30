@@ -2,3 +2,9 @@
 $p_host = Read-Host 'Puppet Host'
 $p_ip = Read-Host 'Puppet IP'
 $p_ip + "`t`t" + $p_host | Out-File -encoding ASCII -append "C:\Windows\System32\drivers\etc\hosts"
+
+$source = "https://downloads.puppetlabs.com/windows/puppet-latest.msi"
+$destination = "c:\temp\puppet.msi"
+Invoke-WebRequest $source -OutFile $destination
+
+Start-Process "c:\temp\puppet.msi" /qn -Wait
