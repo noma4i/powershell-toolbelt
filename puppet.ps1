@@ -3,4 +3,4 @@
     [string]$p_ip = $(throw "-p_id is required!")
  )
 
-`n`t{0}`t{1}" -f $p_ip.replace(" ",""), $p_host.replace(" ","") | out-file C:\Windows\System32\drivers\etc\hosts -append
+$p_ip + "`t`t" + $p_host | Out-File -encoding ASCII -append "C:\Windows\System32\drivers\etc\hosts"
