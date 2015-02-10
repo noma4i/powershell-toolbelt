@@ -6,7 +6,7 @@ Installing puppet agent on windows:
 - run this in PS console
 
 ````powershell
-  (New-Object System.Net.WebClient).DownloadFile("https://raw.githubusercontent.com/noma4i/powershell-toolbelt/master/puppet.ps1", "c:\temp\puppet.ps1") | powershell c:\temp\puppet.ps1
+  Invoke-WebRequest "https://raw.githubusercontent.com/noma4i/powershell-toolbelt/master/puppet.ps1" -OutFile "${env:temp}\puppet.ps1" | powershell "${env:temp}\puppet.ps1"
 ````
 
 Script will:
